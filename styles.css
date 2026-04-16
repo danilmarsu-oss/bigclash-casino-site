@@ -19,6 +19,7 @@ body {
   background: radial-gradient(circle at top, #0f2d6f 0%, var(--main-bg) 48%, #040f2d 100%);
   color: var(--text-main);
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 a {
@@ -211,12 +212,20 @@ h1 {
 .policy-content p {
   margin: 0;
   color: var(--text-soft);
+  overflow-wrap: anywhere;
 }
 
 .policy-content ul,
 .policy-content ol {
   margin: 0;
   padding-left: 20px;
+}
+
+.policy-content li,
+.policy-content td,
+.policy-content th,
+.review-card p {
+  overflow-wrap: anywhere;
 }
 
 .action-form-wrap {
@@ -298,6 +307,7 @@ h1 {
 .table-wrap {
   margin-top: 10px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 table {
@@ -494,6 +504,10 @@ th {
 }
 
 @media (max-width: 768px) {
+  .section-block {
+    padding: 18px 0 24px;
+  }
+
   .header-inner {
     min-height: 58px;
     gap: 8px;
@@ -520,6 +534,32 @@ th {
     padding-top: 22px;
   }
 
+  .seo-content {
+    gap: 16px;
+  }
+
+  .policy-content h1,
+  .policy-content h2,
+  .policy-content h3 {
+    line-height: 1.25;
+  }
+
+  .policy-content p,
+  .policy-content li,
+  .policy-content td,
+  .policy-content th {
+    font-size: 0.95rem;
+  }
+
+  .action-form-wrap {
+    padding: 14px;
+  }
+
+  .form-submit {
+    width: 100%;
+    text-align: center;
+  }
+
   .game-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -539,6 +579,44 @@ th {
   .providers-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .header-inner {
+    min-height: 52px;
+    gap: 6px;
+  }
+
+  .logo {
+    width: 78px;
+  }
+
+  .auth-actions {
+    gap: 4px;
+  }
+
+  .auth-btn {
+    font-size: 0.78rem;
+    padding: 6px 8px;
+  }
+
+  .payment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .providers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .updated-strip p {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 440px) {
@@ -553,5 +631,17 @@ th {
   .cta-btn {
     width: 100%;
     text-align: center;
+  }
+
+  .game-grid {
+    gap: 10px;
+  }
+
+  .review-card {
+    padding: 14px;
+  }
+
+  .accordion-trigger {
+    font-size: 0.95rem;
   }
 }
